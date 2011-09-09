@@ -2,6 +2,7 @@
 
 # User specific aliases and functions
 alias cp='cp -i'
+alias grep='grep --color'
 alias ll='ls -l --color=tty'
 alias ls='ls --color=tty'
 alias la='ls -al'
