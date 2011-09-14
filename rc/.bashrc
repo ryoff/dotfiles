@@ -2,7 +2,7 @@
 
 # User specific aliases and functions
 alias cp='cp -i'
-alias grep='grep --color'
+alias grep='grep -n --color'
 alias ll='ls -l --color=tty'
 alias ls='ls --color=tty'
 alias la='ls -al'
@@ -15,7 +15,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
-
+alias finder='find ./ -type f -name '\''*.*'\'' | xargs grep -n --color '
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
