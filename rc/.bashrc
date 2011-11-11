@@ -24,6 +24,8 @@ fi
 #---
    num=31
    PROMPT_COMMAND='num=`expr 31 + $((num - 30)) % 7`;'
-   PS1='\[\ek\e\\\[\e[1;${num}m\]\][\u@\h \W]\[\e[0m\]\$'
+   PS1='\[\ek\e\\\[\e[1;${num}m\]\][\u@\h \w]\[\e[0m\]\$'
 #---
 
+export EDITOR='vi'
+export SVN_EDITOR='vi'
