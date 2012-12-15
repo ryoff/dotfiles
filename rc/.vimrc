@@ -1,7 +1,5 @@
 "新しい行のインデントを現在行と同じにする
 set autoindent
-"バックアップファイルを作るディレクトリ
-set backupdir=$HOME/.vim/bak
 "クリップボードをWindowsと連携
 set clipboard=unnamed
 "pasteモードとnopasteモードを切り替える
