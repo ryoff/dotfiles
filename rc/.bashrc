@@ -31,3 +31,6 @@ fi
 
 export EDITOR='vi'
 export SVN_EDITOR='vi'
+
+export HISTCONTROL=ignoredups
+export HISTSIZE=10000
