@@ -3,8 +3,7 @@
 # User specific aliases and functions
 alias cp='cp -i'
 alias grep='grep -n --color'
-alias ll='ls -l --color=tty'
-alias ls='ls --color=tty'
+alias ll='ls -l'
 alias la='ls -al'
 alias mv='mv -i'
 alias rm='rm -i'
@@ -36,6 +35,6 @@ GIT_PS1_SHOWDIRTYSTATE=true
 
 export EDITOR='/usr/bin/vim'
 export SVN_EDITOR='vi'
-
+export TERM=xterm-256color
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
