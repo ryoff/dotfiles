@@ -23,13 +23,18 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+# git
+source ~/.git-prompt.sh
+source ~/.git-completion.bash
+GIT_PS1_SHOWDIRTYSTATE=true
+
 #---
    num=31
    PROMPT_COMMAND='num=`expr 31 + $((num - 30)) % 7`;'
-   PS1='\[\ek\e\\\[\e[1;${num}m\]\][\u@\h \w]\[\e[0m\$ '
+   PS1='\[\ek\e\\\[\e[1;${num}m\]\][\u@\h \w] $(__git_ps1)\[\e[0m\$ '
 #---
 
-export EDITOR='vi'
+export EDITOR='/usr/bin/vim'
 export SVN_EDITOR='vi'
 
 export HISTCONTROL=ignoredups
