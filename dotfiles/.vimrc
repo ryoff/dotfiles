@@ -55,12 +55,9 @@ syntax on
 filetype on
 filetype plugin on
 
-"autocmd FileType php : set dictionary=~/.vim/dict/php.dict
-
 "encoding
 set encoding=utf-8
 set fileencodings=utf-8
-
 
 "php文法チェック
 set makeprg=php\ -l\ %
