@@ -34,7 +34,8 @@ set scrolloff=5
 set softtabstop=0
 " ステータスライン関連
 set laststatus=2
-set statusline=%y%{GetStatusEx()}\ 0x%B(%b)%F%m%r%=<%c:%l>
+" lightline を入れたので自作はcommentout
+" set statusline=%y%{GetStatusEx()}\ 0x%B(%b)%F%m%r%=<%c:%l>
 " 折りたたみをマーカーで
 set fdm=marker
 " Tabを可視化する
@@ -77,14 +78,29 @@ filetype plugin indent off
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
   call neobundle#rc(expand('~/.vim/bundle'))
-endif 
+endif
 
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'thinca/vim-quickrun'
+
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
+
 " Ruby向けにendを自動挿入してくれる
 NeoBundle 'tpope/vim-endwise'
+
+" 下のbarにカラー付きで情報を出してくれる
+NeoBundle 'itchyny/lightline.vim'
+if !has('gui_running')
+  set t_Co=256
+endif
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"⭤":""}',
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
 
 filetype indent on
 
