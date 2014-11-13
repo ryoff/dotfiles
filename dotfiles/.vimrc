@@ -41,6 +41,16 @@ set fdm=marker
 " Tabを可視化する
 set list
 set listchars=tab:>.,trail:_
+" カーソルライン
+set cursorline
+
+" 引用符, 括弧の設定
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap <> <><Left>
 
 function! GetStatusEx()
     let str = ''
@@ -81,26 +91,33 @@ if has('vim_starting')
 endif
 
 NeoBundleFetch 'Shougo/neobundle.vim'
-
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
-
 " Ruby向けにendを自動挿入してくれる
 NeoBundle 'tpope/vim-endwise'
-
 " 下のbarにカラー付きで情報を出してくれる
 NeoBundle 'itchyny/lightline.vim'
+" window sizeを簡単に変える
+NeoBundle 'jimsei/winresizer'
+
 if !has('gui_running')
   set t_Co=256
 endif
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'landscape',
       \ 'component': {
       \   'readonly': '%{&readonly?"⭤":""}',
+      \   'filename': expand('%'),
       \ },
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
 
 filetype indent on
+
+
+"----------------------------------------------------------
+"" WinResizer 
+"----------------------------------------------------------
+nnoremap <C-r> :WinResizerStartResize<CR>
 
