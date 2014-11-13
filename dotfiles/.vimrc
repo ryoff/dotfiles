@@ -97,7 +97,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-endwise'
 " 下のbarにカラー付きで情報を出してくれる
 NeoBundle 'itchyny/lightline.vim'
-" window sizeを簡単に変える
+" window sizeを簡単に変える (C-eがデフォルト)
 NeoBundle 'jimsei/winresizer'
 
 if !has('gui_running')
@@ -114,10 +114,4 @@ let g:lightline = {
       \ }
 
 filetype indent on
-
-
-"----------------------------------------------------------
-"" WinResizer 
-"----------------------------------------------------------
-nnoremap <C-r> :WinResizerStartResize<CR>
 
