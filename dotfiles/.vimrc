@@ -45,12 +45,12 @@ set listchars=tab:>.,trail:_
 set cursorline
 
 " 引用符, 括弧の設定
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap ( ()<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap <> <><Left>
+""inoremap { {}<Left>
+""inoremap [ []<Left>
+""inoremap ( ()<Left>
+""inoremap " ""<Left>
+""inoremap ' ''<Left>
+""inoremap <> <><Left>
 
 function! GetStatusEx()
     let str = ''
@@ -99,6 +99,8 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'itchyny/lightline.vim'
 " window sizeを簡単に変える (C-eがデフォルト)
 NeoBundle 'jimsei/winresizer'
+" vimからgitが使える
+NeoBundle 'tpope/vim-fugitive'
 
 if !has('gui_running')
   set t_Co=256

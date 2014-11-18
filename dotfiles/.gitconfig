@@ -1,0 +1,11 @@
+[user]
+	name = ryoff
+	email = ryoffes@gmail.com
+[color]
+	ui = auto
+[alias]
+	st = status
+	di = diff
+[core]
+	editor = /usr/bin/vim
+	excludesfile = ~/.gitignore
