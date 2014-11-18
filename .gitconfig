@@ -6,3 +6,9 @@
 [core]
 	editor = /usr/bin/vim
 	excludesfile = ~/.gitignore
+[diff]
+	algorithm = histogram
+[pager]
+        log = diff-highlight | less
+        show = diff-highlight | less
+        diff = diff-highlight | less
