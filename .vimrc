@@ -105,7 +105,7 @@ let g:lightline = {
       \ 'colorscheme': 'landscape',
       \ 'component': {
       \   'readonly': '%{&readonly?"⭤":""}',
-      \   'filename': expand('%'),
+      \   'filename': expand('%:p'),
       \ },
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
