@@ -53,6 +53,8 @@ set fileencodings=utf-8
 "php文法チェック
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
+" tagsジャンプの時に複数ある時は一覧表示
+nnoremap <C-]> g<C-]> 
 
 " 引用符, 括弧の設定
 ""inoremap { {}<Left>
@@ -113,6 +115,10 @@ let g:lightline = {
 " switch.vim
 " ------------------------------------
 nnoremap ! :Switch<CR>
+
+if filereadable(expand($HOME.'/.vimrc_local'))
+  source $HOME/.vimrc_local
+endif
 
 " ファイルタイプ関連を有効にする
 filetype plugin indent on
