@@ -38,3 +38,7 @@ export SVN_EDITOR='vi'
 export TERM=xterm-256color
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
+
+if [ -e "${HOME}/.bashrc.local" ]; then
+  source "${HOME}/.bashrc.local"
+fi
