@@ -9,6 +9,9 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias s='screen'
 alias sl='screen -ls'
+alias t='tmux'
+alias tl='tmux ls'
+alias tn='tmux new -s' # 名前をつけて新規セッション開始
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -27,11 +30,10 @@ source ~/.git-prompt.sh
 source ~/.git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 
-#---
-   num=31
-   PROMPT_COMMAND='num=`expr 31 + $((num - 30)) % 7`;'
-   PS1='\[\ek\e\\\[\e[1;${num}m\]\][\u@\h \w] $(__git_ps1)\[\e[0m\$ '
-#---
+#--- ステータスバー
+num=31
+PROMPT_COMMAND='num=`expr 31 + $((num - 30)) % 7`;'
+PS1='\[\e[1;${num}m\]\][\u@\h \w] $(__git_ps1)\[\e[0m\$ '
 
 export EDITOR='/usr/bin/vim'
 export SVN_EDITOR='vi'
@@ -39,6 +41,7 @@ export TERM=xterm-256color
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
 
+# 個々の環境のbash設定を読み込む
 if [ -e "${HOME}/.bashrc.local" ]; then
   source "${HOME}/.bashrc.local"
 fi
