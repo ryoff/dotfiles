@@ -43,6 +43,6 @@ export HISTCONTROL=ignoredups
 export HISTSIZE=10000
 
 # 個々の環境のbash設定を読み込む
-if [ -e "${HOME}/.bashrc.local" ]; then
-  source "${HOME}/.bashrc.local"
+if [ -e "${HOME}/.bashrc_local" ]; then
+  source "${HOME}/.bashrc_local"
 fi
