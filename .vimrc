@@ -94,6 +94,20 @@ NeoBundle 'ruby-matchit'
 NeoBundle 'AndrewRadev/switch.vim'
 " ペーストするさいに、自動でset pasteする
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
+" コメントON/OFFを手軽に実行 (Ctrl+-(コントロールキー+ハイフン)を2回押す)
+NeoBundle 'tomtom/tcomment_vim'
+" Rails向けのコマンドを提供する
+NeoBundle 'tpope/vim-rails'
+" インデントに色を付けて見やすくする
+" NeoBundle 'nathanaelkane/vim-indent-guides'           " ターミナルを半透明にしていると、残念なことになる
+" color scheme
+NeoBundle 'w0ng/vim-hybrid'
+" color scheme
+NeoBundle 'jpo/vim-railscasts-theme'
+" color scheme
+NeoBundle 'tomasr/molokai'
+" color scheme
+NeoBundle 'sjl/badwolf'
 
 " ------------------------------------
 " lightline.vim
@@ -116,6 +130,22 @@ let g:lightline = {
 " ------------------------------------
 nnoremap ! :Switch<CR>
 
+" ------------------------------------
+" colorscheme
+" ------------------------------------
+syntax on
+" colorscheme hybrid
+" colorscheme railscasts
+" colorscheme elflord
+colorscheme molokai
+" colorscheme badwolf
+
+" iTerm2で半透明にしているが、vimのcolorschemeを設定すると背景も変更されるため
+highlight Normal ctermbg=none
+
+" ------------------------------------
+" localの設定
+" ------------------------------------
 if filereadable(expand($HOME.'/.vimrc_local'))
   source $HOME/.vimrc_local
 endif
