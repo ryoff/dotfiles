@@ -74,7 +74,7 @@ let php_htmlInStrings=1
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle'))
+  call neobundle#begin(expand('~/.vim/bundle'))
 endif
 
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -108,6 +108,8 @@ NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'tomasr/molokai'
 " color scheme
 NeoBundle 'sjl/badwolf'
+
+call neobundle#end()
 
 " ------------------------------------
 " lightline.vim
