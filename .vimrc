@@ -98,6 +98,8 @@ NeoBundle 'ConradIrwin/vim-bracketed-paste'
 NeoBundle 'tomtom/tcomment_vim'
 " Rails向けのコマンドを提供する
 NeoBundle 'tpope/vim-rails'
+" align
+NeoBundle 'h1mesuke/vim-alignta'
 " インデントに色を付けて見やすくする
 " NeoBundle 'nathanaelkane/vim-indent-guides'           " ターミナルを半透明にしていると、残念なことになる
 " color scheme
