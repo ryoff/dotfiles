@@ -21,7 +21,7 @@ set shiftwidth=2
 "インクリメンタルサーチを行う
 set incsearch
 "カーソルを行頭、行末で止まらないようにする
-set whichwrap=b,s,h,l,<,>,[,]
+" set whichwrap=b,s,h,l,<,>,[,]
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する(noignorecase)
 set ignorecase
 " 検索文字列に大文字が含まれている場合は区別して検索する(nosmartcase)
@@ -110,6 +110,8 @@ NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'tomasr/molokai'
 " color scheme
 NeoBundle 'sjl/badwolf'
+" the sliver searcher をvimから使える
+NeoBundle 'rking/ag.vim'
 
 call neobundle#end()
 
