@@ -47,3 +47,8 @@ export HISTSIZE=10000
 if [ -e "${HOME}/.bashrc_local" ]; then
   source "${HOME}/.bashrc_local"
 fi
+
+# ag -S hoge | peco した結果をさらにvimで開く
+agvim () {
+  vim $(ag "$@" | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
