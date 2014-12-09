@@ -1,0 +1,63 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'test/test_helper.rb'
+    - 'script/**/*'
+    - 'vendor/**/*'
+    - 'factories/**/*'
+    - 'spec/dummy/**/*'
+    - '**/Rakefile'
+    - '**/config.ru'
+    - '**/*/schema.rb'
+    - '*.gemspec'
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockNesting:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ParameterLists:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+# 日本語のコメントを許可
+Style/AsciiComments:
+  Enabled: false
+Style/Blocks:
+  Exclude:
+    - 'spec/**/*'
+Style/RaiseArgs:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+Style/MultilineOperationIndentation:
+  Enabled: false
+Style/AccessorMethodName:
+  Enabled: false
+Style/PredicateName:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+# 数字は３文字毎に区切りを入れる。db/schema.rbはversionが記述されているので除外
+Style/NumericLiterals:
+  Exclude:
+    - '**/*/schema.rb'
+Style/AndOr:
+  Exclude:
+    - 'app/controllers/**/*'
+Style/BlockComments:
+  Enabled: false
