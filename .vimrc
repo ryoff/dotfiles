@@ -54,7 +54,7 @@ set fileencodings=utf-8
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 " tagsジャンプの時に複数ある時は一覧表示
-nnoremap <C-]> g<C-]> 
+nnoremap <C-]> g<C-]>
 
 " 引用符, 括弧の設定
 ""inoremap { {}<Left>
