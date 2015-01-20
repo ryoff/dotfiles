@@ -56,6 +56,8 @@ set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
+" Escの2回押しでハイライト消去
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " 引用符, 括弧の設定
 ""inoremap { {}<Left>
