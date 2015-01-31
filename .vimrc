@@ -115,6 +115,8 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'sjl/badwolf'
 " the sliver searcher をvimから使える
 NeoBundle 'rking/ag.vim'
+" syntax + 自動compile
+NeoBundle 'kchmck/vim-coffee-script'
 
 call neobundle#end()
 
