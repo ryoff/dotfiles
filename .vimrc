@@ -58,6 +58,10 @@ set errorformat=%m\ in\ %f\ on\ line\ %l
 nnoremap <C-]> g<C-]>
 " Escの2回押しでハイライト消去
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" vimにcoffeeファイルタイプを認識させる
+au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+" インデントを設定
+autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 
 " 引用符, 括弧の設定
 ""inoremap { {}<Left>
