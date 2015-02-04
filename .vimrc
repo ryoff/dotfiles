@@ -62,6 +62,8 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 " インデントを設定
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+" Gemfileをruby syntaxに
+autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 
 " 引用符, 括弧の設定
 ""inoremap { {}<Left>
