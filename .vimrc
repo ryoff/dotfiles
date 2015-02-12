@@ -123,6 +123,8 @@ NeoBundle 'sjl/badwolf'
 NeoBundle 'rking/ag.vim'
 " syntax + 自動compile
 NeoBundle 'kchmck/vim-coffee-script'
+" align
+NeoBundle 'junegunn/vim-easy-align'
 
 call neobundle#end()
 
@@ -201,6 +203,14 @@ colorscheme molokai
 
 " iTerm2で半透明にしているが、vimのcolorschemeを設定すると背景も変更されるため
 highlight Normal ctermbg=none
+
+" ------------------------------------
+" vim-easy-align.vim
+" ------------------------------------
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+nmap <Leader>a <Plug>(EasyAlign)
 
 " ------------------------------------
 " localの設定
