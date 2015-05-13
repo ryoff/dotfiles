@@ -1,14 +1,15 @@
 [color]
-	ui = auto
+  ui = auto
 [alias]
-	st = status
-	di = diff
+  st = status
+  di = diff
+  ll = log --graph --decorate --date=short
 [core]
-	editor = /usr/bin/vim
-	excludesfile = ~/.gitignore
+  editor = /usr/bin/vim
+  excludesfile = ~/.gitignore
 [diff]
-	algorithm = histogram
+  algorithm = histogram
 [pager]
-        log = diff-highlight | less
-        show = diff-highlight | less
-        diff = diff-highlight | less
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
