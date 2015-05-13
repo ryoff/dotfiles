@@ -1,3 +1,7 @@
 *.sw*
 Gemfile.lock.tags
 tags
+*.DS_Store
+
+log/*
+.ruby-version
