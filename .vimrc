@@ -125,6 +125,8 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 " align
 NeoBundle 'junegunn/vim-easy-align'
+" slim
+NeoBundle 'slim-template/vim-slim'
 
 call neobundle#end()
 
