@@ -8,6 +8,8 @@ syntax on
 set nocompatible
 "新しい行のインデントを現在行と同じにする
 set autoindent
+"開いているファイルのディレクトリに移動する
+set autochdir
 "クリップボードをWindowsと連携
 set clipboard=unnamed
 "タブの代わりに空白文字を挿入する
