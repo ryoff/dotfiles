@@ -57,3 +57,9 @@ agvim () {
 
 # direnv
 eval "$(direnv hook bash)"
+# enhancd
+if [ -f "${HOME}/.enhancd/bash/enhancd.bash" ]; then
+    source "${HOME}/.enhancd/bash/enhancd.bash"
+fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

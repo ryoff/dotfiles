@@ -5,3 +5,6 @@ tags
 
 log/*
 .ruby-version
+.envrc
+
+pkg/*
