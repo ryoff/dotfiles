@@ -10,3 +10,5 @@ log/*
 pkg/*
 
 vendor/bundle/
+
+.vim/bundle
