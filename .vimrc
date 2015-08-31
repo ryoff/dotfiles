@@ -2,8 +2,6 @@
 filetype off
 filetype plugin indent off
 
-" syntaxを有効に
-syntax on
 " vi互換無効
 set nocompatible
 "新しい行のインデントを現在行と同じにする
