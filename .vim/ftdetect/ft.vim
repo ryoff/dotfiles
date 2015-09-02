@@ -3,4 +3,5 @@ augroup set_syntax
 
   " rb
   autocmd BufRead,BufNewFile Schemafile setfiletype ruby
+  autocmd BufRead,BufNewFile *.schema setfiletype ruby
 augroup END
