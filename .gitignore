@@ -12,3 +12,4 @@ pkg/*
 vendor/bundle/
 
 .vim/bundle
+.vim/.netrwhist
