@@ -37,7 +37,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 #--- ステータスバー
 num=31
 PROMPT_COMMAND='num=`expr 31 + $((num - 30)) % 7`;'
-PS1='\[\e[1;${num}m\]\][\u@\h \w] $(__git_ps1)\[\e[0m\$ '
+PS1='\[\e[1;${num}m\]\][\u@\h \w] $(__git_ps1)\[\e[0m\$'
 
 export EDITOR='/usr/bin/vim'
 export SVN_EDITOR='vi'
