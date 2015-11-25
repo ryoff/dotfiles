@@ -127,6 +127,12 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'junegunn/vim-easy-align'
 " slim
 NeoBundle 'slim-template/vim-slim'
+" 置換検索を便利に
+" crs "SnakeCase" > "snake_case"
+" crm "mixed_case" > "MixedCase"
+" crc "camel_case" > "camelCase"
+" cru "upper_case" > "UPPER_CASE"
+NeoBundle 'tpope/vim-abolish'
 
 call neobundle#end()
 
