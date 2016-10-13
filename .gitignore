@@ -10,6 +10,9 @@ log/*
 pkg/*
 
 vendor/bundle/
+vendor/bundle_bin
 
 .vim/bundle
 .vim/.netrwhist
+
+*.csv#

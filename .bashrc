@@ -63,3 +63,6 @@ if [ -f "${HOME}/.enhancd/bash/enhancd.bash" ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# pkgconfigの場所を指定
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
