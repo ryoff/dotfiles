@@ -22,6 +22,8 @@ set clipboard=unnamed
 set expandtab
 "ファイル内の <Tab> が対応する空白の数
 set tabstop=2
+" 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set softtabstop=2
 "行番号を表示する
 set number
 "シフト移動幅
@@ -40,6 +42,9 @@ set smartindent
 set hlsearch
 " 括弧の対応をハイライト
 set showmatch
+" Vimの「%」を拡張する
+" Vimに同梱されているmatchitプラグインを有効化
+source $VIMRUNTIME/macros/matchit.vim
 " 入力中のコマンドを表示
 set showcmd
 " 行送り
@@ -55,10 +60,7 @@ set list
 set listchars=tab:>.,trail:_
 " カーソルライン
 set cursorline
-"encoding
-set encoding=utf-8
-set fileencodings=utf-8
-scriptencoding utf-8
+set wildmenu
 "php文法チェック
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
