@@ -71,6 +71,8 @@ agvim () {
 # direnv
 eval "$(direnv hook bash)"
 # enhancd
+# リストをfull_path表示にする
+export ENHANCD_DOT_SHOW_FULLPATH=1
 if [ -f "${HOME}/.enhancd/bash/enhancd.bash" ]; then
     source "${HOME}/.enhancd/bash/enhancd.bash"
 fi
