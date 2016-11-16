@@ -13,16 +13,14 @@ alias tm='tmux'
 alias tml='tmux ls'
 alias tms='tmux new -s' # 名前をつけて新規セッション開始
 alias tmr='tmux a -t' # 名前を指定してアタッチ
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
 alias finder='find ./ -type f -name '\''*.*'\'' | xargs grep -n --color '
 alias ag='ag -S'
 alias diff="colordiff --side-by-side --suppress-common-lines"
-alias less='less -R'
-#alias elog="sudo tail -f /var/log/apache2/error.log | perl -pe '\$r=int(rand(7));s/\[error\]|DBIx::Class::ResultSet|SELECT|FROM|WHERE|UPDATE|INSERT|DELETE|GROUP|ORDER|VAR/\e\[1;3\${r}m$&\e\[0m/g'"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -73,8 +71,8 @@ eval "$(direnv hook bash)"
 # enhancd
 # リストをfull_path表示にする
 export ENHANCD_DOT_SHOW_FULLPATH=1
-if [ -f "${HOME}/.enhancd/bash/enhancd.bash" ]; then
-    source "${HOME}/.enhancd/bash/enhancd.bash"
+if [ -f "${HOME}/.enhancd/init.sh" ]; then
+  source "${HOME}/.enhancd/init.sh"
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
