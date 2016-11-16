@@ -71,6 +71,8 @@ eval "$(direnv hook bash)"
 # enhancd
 # リストをfull_path表示にする
 export ENHANCD_DOT_SHOW_FULLPATH=1
+# インタラクティブツールの優先度を変える
+export ENHANCD_FILTER='peco:percol:gof:pick:icepick:sentaku:selecta:fzy:fzf-tmux:fzf'
 if [ -f "${HOME}/.enhancd/init.sh" ]; then
   source "${HOME}/.enhancd/init.sh"
 fi
