@@ -45,7 +45,7 @@ export TERM=xterm-256color
 # ignorespace: 先頭にスペースを入れると履歴に残さない
 # ignoreboth: ignoredups+ignorespaceの同時設定
 # erasedups: 重複するコマンドを残さない
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth
 export HISTSIZE=10000
 
 # lessの設定
