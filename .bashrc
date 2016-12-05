@@ -40,6 +40,11 @@ PS1='\[\e[1;${num}m\]\][\u@\h \w] $(__git_ps1)\[\e[0m\$'
 export EDITOR='/usr/bin/vim'
 export SVN_EDITOR='vi'
 export TERM=xterm-256color
+# コマンド履歴
+# ignoredups: 続けて入力しても1つだけ
+# ignorespace: 先頭にスペースを入れると履歴に残さない
+# ignoreboth: ignoredups+ignorespaceの同時設定
+# erasedups: 重複するコマンドを残さない
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
 
