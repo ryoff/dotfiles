@@ -69,7 +69,9 @@ nnoremap <C-]> g<C-]>
 " Escの2回押しでハイライト消去
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " vimにcoffeeファイルタイプを認識させる
-au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
+" mdをmarkdownに認識させる
+au BufRead,BufNewFile *.md set filetype=markdown
 " インデントを設定
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 " Gemfileをruby syntaxに
@@ -143,6 +145,10 @@ NeoBundle 'slim-template/vim-slim'
 " crc "camel_case" > "camelCase"
 " cru "upper_case" > "UPPER_CASE"
 NeoBundle 'tpope/vim-abolish'
+" markdown preview
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 call neobundle#end()
 
