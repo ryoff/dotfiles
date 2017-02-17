@@ -119,5 +119,9 @@ peco-history() {
 }
 bind '"\C-r":"peco-history\n"'
 
+# golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 # pkgconfigの場所を指定
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
