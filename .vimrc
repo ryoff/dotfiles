@@ -237,6 +237,12 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 
 " ------------------------------------
+" nerdtree.vim
+" ------------------------------------
+" Ctrl+nで起動させる
+map <C-n> :NERDTreeToggle<CR>
+
+" ------------------------------------
 " localの設定
 " ------------------------------------
 if filereadable(expand($HOME.'/.vimrc_local'))
