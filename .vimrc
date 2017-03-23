@@ -146,6 +146,7 @@ NeoBundle 'slim-template/vim-slim'
 " cru "upper_case" > "UPPER_CASE"
 NeoBundle 'tpope/vim-abolish'
 " markdown preview
+" :PrevimOpen
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
