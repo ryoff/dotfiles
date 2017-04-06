@@ -242,6 +242,15 @@ nmap <Leader>a <Plug>(EasyAlign)
 " ------------------------------------
 " Ctrl+nで起動させる
 map <C-n> :NERDTreeToggle<CR>
+" 備忘録
+" o   表示
+" go  表示(移動なし)
+" t   新しいタブで開く
+" T   open in new tab silently middle-click
+" i   分割して開く
+" gi  分割して表示(移動無し)
+" s   縦分割して表示
+" gs  縦分割して表示(移動なし)
 
 " ------------------------------------
 " localの設定
