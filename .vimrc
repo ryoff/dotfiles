@@ -150,6 +150,8 @@ NeoBundle 'tpope/vim-abolish'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+" markdownの折りたたみなし
+let g:vim_markdown_folding_disabled=1
 
 call neobundle#end()
 
