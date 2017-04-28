@@ -16,3 +16,5 @@ vendor/bundle_bin
 .vim/.netrwhist
 
 *.csv#
+
+*.gem
