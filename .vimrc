@@ -64,6 +64,9 @@ set wildmenu
 "php文法チェック
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
+" pasteモードの切替トグル
+" * vim-bracketed-paste がtmuxの最新versionで動かないので暫定的に使用
+set pastetoggle=<C-p>
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
 " Escの2回押しでハイライト消去
