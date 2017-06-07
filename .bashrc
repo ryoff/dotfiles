@@ -125,3 +125,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # pkgconfigの場所を指定
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+
+# カラー設定
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxbxegedabagacad
