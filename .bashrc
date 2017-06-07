@@ -3,8 +3,8 @@
 # User specific aliases and functions
 alias cp='cp -i'
 alias grep='grep --color'
-alias ll='ls -l'
-alias la='ls -al'
+alias ll='ls -lF'
+alias la='ls -alF'
 alias mv='mv -i'
 alias rm='rm -i'
 #alias s='screen'
