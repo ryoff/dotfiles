@@ -155,6 +155,10 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 " markdownの折りたたみなし
 let g:vim_markdown_folding_disabled=1
+" Dash.appを使う場合
+NeoBundle 'rizzatti/dash.vim'
+" leaderがdefaultであれば、\dで現在のファイルタイプでカーソル以下の単語検索がDash.appで開く
+nmap <silent> <leader>d <Plug>DashSearch
 
 call neobundle#end()
 
