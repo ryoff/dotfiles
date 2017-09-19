@@ -1,0 +1,17 @@
+# utf-8 文字で画面描画する (~でトグル)
+set line-graphics = utf-8
+# main viewの左端にコミットIDを表示する
+set main-view = id date author commit-title:graph=yes,refs=yes
+# 横分割に強制する (デフォルトは画面サイズに応じてauto
+set vertical-split = no
+# 空白無視 (status-view では表示するが diff-view では無視する) (W でトグル)
+set ignore-space = at-eol
+# マージ diff を表示する
+set diff-options = -m --first-parent
+
+# MEMO
+# m: Switch to main view.
+# d: Switch to diff view.
+# l: Switch to log view.
+# s: Switch to status view
+# e: editorで該当行を開く
