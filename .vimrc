@@ -101,6 +101,13 @@ if has('vim_starting')
   call neobundle#begin(expand('~/.vim/bundle'))
 endif
 
+" 分割入れ替え
+"   水平分割
+"   C-w t C-w K
+"   垂直分割
+"   C-w t C-w H
+" *) C-w tは最初のウィンドウを現在のものにする / C-w Kは現在のウィンドウを一番上に全幅に移動する / C-w Hは現在のウィンドウを一番左
+
 NeoBundleFetch 'Shougo/neobundle.vim'
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
