@@ -23,6 +23,7 @@ alias ag='ag -S'
 alias diff="colordiff --side-by-side --suppress-common-lines"
 # gitの差分だけにrubocopを当てる
 alias diffcop="git diff --diff-filter=ACMR --name-only | xargs bundle exec rubocop"
+alias stagedcop="git diff --staged --diff-filter=ACMR --name-only | xargs bundle exec rubocop"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
