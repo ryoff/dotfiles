@@ -169,6 +169,23 @@ nmap <silent> <leader>d <Plug>DashSearch
 
 call neobundle#end()
 
+" split modeの切替
+" https://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
+nnoremap s <Nop>
+" 分割
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+" window間移動
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+" windowごと移動
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+
 " ------------------------------------
 " lightline.vim
 " ------------------------------------
