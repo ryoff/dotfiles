@@ -45,7 +45,13 @@ fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit
 
 # prompt
-PROMPT="[%m@%n][%~]$ "
+num=0
+precmd() { eval myprompt; }
+myprompt() {
+  # 1~7を順番にセットする。0はblackなので見えないので除く
+  num=`expr 1 + $((num)) % 7`;
+  PROMPT="%F{$num}[%m@%n][%~]%f$ "
+}
 
 # git prompt(右側prompt)
 source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
