@@ -49,16 +49,7 @@ fpath=(~/.zsh/completion $fpath)
 # 保管機能を有効にして、実行する
 autoload -Uz compinit && compinit
 
-# prompt
-num=0
-precmd() { eval myprompt; }
-myprompt() {
-  # 1~7を順番にセットする。0はblackなので見えないので除く
-  num=`expr 1 + $((num)) % 7`;
-  PROMPT="%F{$num}[%m@%n][%~]%f$ "
-}
-
-# git prompt(右側prompt)
+# git prompt
 source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
 ZSH_THEME_GIT_PROMPT_PREFIX="["
 ZSH_THEME_GIT_PROMPT_SUFFIX=" ]"
@@ -69,7 +60,16 @@ ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}%{+%G%}"
 ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[red]%}%{-%G%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[green]%}%{+%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}%{✔%G%}"
-RPROMPT='$(git_super_status)'
+#RPROMPT='$(git_super_status)'
+
+# prompt
+num=0
+precmd() { eval myprompt; }
+myprompt() {
+  # 1~7を順番にセットする。0はblackなので見えないので除く
+  num=`expr 1 + $((num)) % 7`;
+  PROMPT="%F{$num}[%m@%n][%~]%f $(git_super_status) $ "
+}
 
 # rbenv installにて表示されたコマンド
 # For compilers to find readline you may need to set:
