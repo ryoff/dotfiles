@@ -21,6 +21,9 @@ setopt auto_pushd
 # auto_pushdで重複するディレクトリは記録しない
 setopt pushd_ignore_dups
 
+# コマンドのスペルミスを指摘
+setopt correct
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
