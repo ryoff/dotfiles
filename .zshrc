@@ -71,6 +71,10 @@ myprompt() {
   PROMPT="%F{$num}[%m@%n][%~]%f $(git_super_status) $ "
 }
 
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
+
 # rbenv installにて表示されたコマンド
 # For compilers to find readline you may need to set:
 export LDFLAGS="-L/usr/local/opt/readline/lib"
