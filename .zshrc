@@ -39,6 +39,11 @@ alias tm='tmux'
 alias tml='tmux ls'
 alias tms='tmux new -s' # 名前をつけて新規セッション開始
 alias tmr='tmux a -t' # 名前を指定してアタッチ
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
 
 # git completionの設定
 zstyle ':completion:*:*:git:*' script ~/.zsh/completion/git-completion.bash
