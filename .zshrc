@@ -9,12 +9,6 @@ export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43
 # 補完候補もLS_COLORSに合わせて色が付くようにする
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# 他のターミナルとヒストリーを共有
-setopt share_history
-
-# ヒストリーに重複を表示しない
-setopt histignorealldups
-
 # cd -<tab>で以前移動したディレクトリを表示
 setopt auto_pushd
 
@@ -24,9 +18,22 @@ setopt pushd_ignore_dups
 # コマンドのスペルミスを指摘
 setopt correct
 
+# history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+setopt share_history      # 他のターミナルとヒストリーを共有
+setopt hist_ignore_dups   # 直前と同じコマンドはヒストリに追加しない
+setopt bang_hist          # !を使ったヒストリ展開を行う(d)
+setopt extended_history   # ヒストリに実行時間も保存する
+setopt hist_reduce_blanks # 余分なスペースを削除してヒストリに保存する
+## historyをマッチしたコマンドで辿れる
+## `git` まで打った状態でCtrl+pを押せば、gitのコマンドだけを履歴たどれる
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
 
 # alias
 alias mv='mv -i'
