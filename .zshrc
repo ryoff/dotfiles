@@ -53,6 +53,7 @@ fpath=(~/.zsh/completion $fpath)
 
 # 保管機能を有効にして、実行する
 autoload -Uz compinit && compinit
+bindkey "^[[Z" reverse-menu-complete  # Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
 
 # git prompt
 source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
