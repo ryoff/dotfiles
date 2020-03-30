@@ -22,6 +22,7 @@ setopt correct
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+setopt share_history      # 他のターミナルとヒストリーを共有
 setopt hist_ignore_dups   # 直前と同じコマンドはヒストリに追加しない
 setopt bang_hist          # !を使ったヒストリ展開を行う(d)
 setopt extended_history   # ヒストリに実行時間も保存する
