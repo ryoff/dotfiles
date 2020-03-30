@@ -15,8 +15,6 @@ set nocompatible
 set autoindent
 "開いているファイルのディレクトリに移動する
 set autochdir
-"クリップボードをWindowsと連携
-set clipboard=unnamed
 "タブの代わりに空白文字を挿入する
 set expandtab
 "ファイル内の <Tab> が対応する空白の数
@@ -104,6 +102,12 @@ Plugin 'ruby-matchit'
 Plugin 'tpope/vim-fugitive'
 " 下のbarにカラー付きで情報を出してくれる
 Plugin 'itchyny/lightline.vim'
+" 置換検索を便利に
+" crs "SnakeCase" > "snake_case"
+" crm "mixed_case" > "MixedCase"
+" crc "camel_case" > "camelCase"
+" cru "upper_case" > "UPPER_CASE"
+Plugin 'tpope/vim-abolish'
 
 call vundle#end()
 filetype plugin indent on
