@@ -84,6 +84,9 @@ myprompt() {
   PROMPT="%F{$num}[%m@%n][%~]%f $(git_super_status) $ "
 }
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
