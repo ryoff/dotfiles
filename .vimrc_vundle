@@ -108,6 +108,8 @@ Plugin 'itchyny/lightline.vim'
 " crc "camel_case" > "camelCase"
 " cru "upper_case" > "UPPER_CASE"
 Plugin 'tpope/vim-abolish'
+" slim
+Plugin 'slim-template/vim-slim'
 
 call vundle#end()
 filetype plugin indent on
