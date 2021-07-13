@@ -50,7 +50,7 @@ fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit
 
 # git prompt
-source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
+source "/opt/homebrew/opt/zsh-git-prompt/zshrc.sh"
 ZSH_THEME_GIT_PROMPT_PREFIX="["
 ZSH_THEME_GIT_PROMPT_SUFFIX=" ]"
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[white]%}"
