@@ -42,9 +42,6 @@ set smartindent
 set hlsearch
 " 括弧の対応をハイライト
 set showmatch
-" Vimの「%」を拡張する
-" Vimに同梱されているmatchitプラグインを有効化
-source $VIMRUNTIME/macros/matchit.vim
 " 入力中のコマンドを表示
 set showcmd
 " 行送り
@@ -96,79 +93,6 @@ let php_sql_query=1
 " htmlをハイライト
 let php_htmlInStrings=1
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle'))
-endif
-
-" 分割入れ替え
-"   水平分割
-"   C-w t C-w K
-"   垂直分割
-"   C-w t C-w H
-" *) C-w tは最初のウィンドウを現在のものにする / C-w Kは現在のウィンドウを一番上に全幅に移動する / C-w Hは現在のウィンドウを一番左
-
-NeoBundleFetch 'Shougo/neobundle.vim'
-" ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
-" Ruby向けにendを自動挿入してくれる
-NeoBundle 'tpope/vim-endwise'
-" 下のbarにカラー付きで情報を出してくれる
-NeoBundle 'itchyny/lightline.vim'
-" window sizeを簡単に変える (C-eがデフォルト)
-NeoBundle 'jimsei/winresizer'
-" vimからgitが使える
-NeoBundle 'tpope/vim-fugitive'
-" %で括弧だけじゃなく、if end なども行き来できるようになる
-NeoBundle 'ruby-matchit'
-" 特定の文字列を+で切り替える事ができる。
-NeoBundle 'AndrewRadev/switch.vim'
-" ペーストするさいに、自動でset pasteする
-NeoBundle 'ConradIrwin/vim-bracketed-paste'
-" コメントON/OFFを手軽に実行 (Ctrl+-(コントロールキー+ハイフン)を2回押す)
-NeoBundle 'tomtom/tcomment_vim'
-" Rails向けのコマンドを提供する
-NeoBundle 'tpope/vim-rails'
-" align
-NeoBundle 'h1mesuke/vim-alignta'
-" インデントに色を付けて見やすくする
-" NeoBundle 'nathanaelkane/vim-indent-guides'           " ターミナルを半透明にしていると、残念なことになる
-" color scheme
-NeoBundle 'w0ng/vim-hybrid'
-" color scheme
-NeoBundle 'jpo/vim-railscasts-theme'
-" color scheme
-NeoBundle 'tomasr/molokai'
-" color scheme
-NeoBundle 'sjl/badwolf'
-" the sliver searcher をvimから使える
-NeoBundle 'rking/ag.vim'
-" syntax + 自動compile
-NeoBundle 'kchmck/vim-coffee-script'
-" align
-NeoBundle 'junegunn/vim-easy-align'
-" slim
-NeoBundle 'slim-template/vim-slim'
-" 置換検索を便利に
-" crs "SnakeCase" > "snake_case"
-" crm "mixed_case" > "MixedCase"
-" crc "camel_case" > "camelCase"
-" cru "upper_case" > "UPPER_CASE"
-NeoBundle 'tpope/vim-abolish'
-" markdown preview
-" :PrevimOpen
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-" markdownの折りたたみなし
-let g:vim_markdown_folding_disabled=1
-" Dash.appを使う場合
-NeoBundle 'rizzatti/dash.vim'
-" leaderがdefaultであれば、\dで現在のファイルタイプでカーソル以下の単語検索がDash.appで開く
-nmap <silent> <leader>d <Plug>DashSearch
-
-call neobundle#end()
-
 " split modeの切替
 " https://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
 nnoremap s <Nop>
@@ -187,88 +111,60 @@ nnoremap sL <C-w>L
 nnoremap sH <C-w>H
 
 " ------------------------------------
-" lightline.vim
+"  dein.vmの設定
 " ------------------------------------
-if !has('gui_running')
-  set t_Co=256
+if &compatible
+  set nocompatible
 endif
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'fugitive': 'MyFugitive',
-      \   'readonly': 'MyReadonly',
-      \   'modified': 'MyModified',
-      \   'filename': 'MyFilename'
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-function! MyModified()
-  if &filetype == "help"
-    return ""
-  elseif &modified
-    return "+"
-  elseif &modifiable
-    return ""
-  else
-    return ""
-  endif
-endfunction
+call dein#begin(expand('~/.vim/dein'))
 
-function! MyReadonly()
-  if &filetype == "help"
-    return ""
-  elseif &readonly
-    return "⭤"
-  else
-    return ""
-  endif
-endfunction
-
-function! MyFugitive()
-  if exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
-  endif
-  return ''
-endfunction
-
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-       \ ('' != expand('%:p') ? expand('%:p') : '[No Name]') .
-       \ ('' != MyModified() ? ' ' . MyModified() : '')
-endfunction
-
-" ------------------------------------
-" switch.vim
-" ------------------------------------
-nnoremap ! :Switch<CR>
-
-" ------------------------------------
-" colorscheme
-" ------------------------------------
+call dein#add('Shougo/dein.vim')
+"" ファイルをtree表示してくれる
+call dein#add('scrooloose/nerdtree')
+"" Ruby向けにendを自動挿入してくれる
+call dein#add('tpope/vim-endwise')
+"" 下のbarにカラー付きで情報を出してくれる
+call dein#add('itchyny/lightline.vim')
+"" window sizeを簡単に変える (C-eがデフォルト)
+call dein#add('jimsei/winresizer')
+"" %で括弧だけじゃなく、if end なども行き来できるようになる
+call dein#add('vim-scripts/ruby-matchit')
+"" ペーストするさいに、自動でset pasteする
+call dein#add('ConradIrwin/vim-bracketed-paste')
+"" コメントON/OFFを手軽に実行 (Ctrl+-(コントロールキー+ハイフン)を2回押す)
+call dein#add('tomtom/tcomment_vim')
+"" Rails向けのコマンドを提供する
+call dein#add('tpope/vim-rails')
+"" align
+call dein#add('h1mesuke/vim-alignta')
+"" color scheme
 syntax on
-" colorscheme hybrid
-" colorscheme railscasts
-" colorscheme elflord
-colorscheme molokai
-" colorscheme badwolf
+call dein#add('tomasr/molokai')
+"" syntax + 自動compile
+call dein#add('kchmck/vim-coffee-script')
+"" align
+call dein#add('junegunn/vim-easy-align')
+"" slim
+call dein#add('slim-template/vim-slim')
+"" 置換検索を便利に
+"" crs "SnakeCase" > "snake_case"
+"" crm "mixed_case" > "MixedCase"
+"" crc "camel_case" > "camelCase"
+"" cru "upper_case" > "UPPER_CASE"
+call dein#add('tpope/vim-abolish')
+"" markdown preview
+"" :PrevimOpen
+call dein#add('plasticboy/vim-markdown')
+call dein#add('kannokanno/previm')
+call dein#add('tyru/open-browser.vim')
 
-" iTerm2で半透明にしているが、vimのcolorschemeを設定すると背景も変更されるため
+"" markdownの折りたたみなし
+let g:vim_markdown_folding_disabled=1
+
+"" iTerm2で半透明にしているが、vimのcolorschemeを設定すると背景も変更されるため
 highlight Normal ctermbg=none
-
-" ------------------------------------
-" vim-easy-align.vim
-" ------------------------------------
-" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
-nmap <Leader>a <Plug>(EasyAlign)
 
 " ------------------------------------
 " nerdtree.vim
@@ -287,6 +183,20 @@ map <C-n> :NERDTreeToggle<CR>
 
 " 隠しファイルをデフォルトで表示させる
 let NERDTreeShowHidden = 1
+
+" ------------------------------------
+" vim-easy-align.vim
+" ------------------------------------
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+nmap <Leader>a <Plug>(EasyAlign)
+
+" Required:
+call dein#end()
+
+" Required:
+syntax enable
 
 " ------------------------------------
 " localの設定
