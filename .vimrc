@@ -2,6 +2,8 @@
 filetype off
 filetype plugin indent off
 
+set backspace=indent,eol,start
+
 " encoding関係
 set encoding=utf-8
 scriptencoding utf-8
