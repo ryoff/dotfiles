@@ -71,24 +71,17 @@ myprompt() {
   PROMPT="%F{$num}[%m@%n][%~]%f $(git_super_status) $ "
 }
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+export RBENV_ROOT=$(brew --prefix rbenv) 
+export PATH=$RBENV_ROOT/bin:$PATH
 eval "$(rbenv init - zsh)"
-
-# rbenv installにて表示されたコマンド
-# For compilers to find readline you may need to set:
-export LDFLAGS="-L/usr/local/opt/readline/lib"
-export CPPFLAGS="-I/usr/local/opt/readline/include"
-
-# For pkg-config to find readline you may need to set:
-export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
-
-# ==> ruby-build
-# ruby-build installs a non-Homebrew OpenSSL for each Ruby version installed and these are never upgraded.
-#
-# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
-# to your ~/.zshrc:
-#   export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-#
-# Note: this may interfere with building old versions of Ruby (e.g <2.4) that use
-# OpenSSL <1.1.
+export OPENSSL_ROOT=$(brew --prefix openssl)
+export PATH="$OPENSSL_ROOT/bin:$PATH"
+export LDFLAGS="-L$OPENSSL_ROOT/lib"
+export CPPFLAGS="-I$OPENSSL_ROOT/include"
+export PKG_CONFIG_PATH="$OPENSSL_ROOT/lib/pkgconfig"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$OPENSSL_ROOT"
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
