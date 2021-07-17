@@ -18,3 +18,5 @@ vendor/bundle_bin
 *.csv#
 
 *.gem
+
+.envrc.local
