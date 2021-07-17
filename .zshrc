@@ -85,3 +85,6 @@ export CPPFLAGS="-I$OPENSSL_ROOT/include"
 export PKG_CONFIG_PATH="$OPENSSL_ROOT/lib/pkgconfig"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$OPENSSL_ROOT"
 export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export NODEBREW_ROOT=/opt/homebrew/var/nodebrew
+export PATH=/opt/homebrew/var/nodebrew/current/bin:$PATH
