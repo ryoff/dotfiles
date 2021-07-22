@@ -4,6 +4,7 @@
   st = status
   di = diff
   ll = log --graph --decorate --date=short
+  co = checkout
 [core]
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore
