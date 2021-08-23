@@ -162,6 +162,10 @@ call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
 call dein#add('tyru/open-browser.vim')
 
+"" github url開く
+"" Default key mapping for a blob view: <leader>gh
+call dein#add('ruanyl/vim-gh-line')
+
 "" markdownの折りたたみなし
 let g:vim_markdown_folding_disabled=1
 
